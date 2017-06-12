@@ -1,6 +1,8 @@
 1: The quick brown meerkat jumps over the lazy dog.
-±!@£$%^&*()
+±!@£$%^&*()()()
 2: The brown meerkat is quick.
 [];'\,./`'
-3: The dog is lazy.
+3: The dog is lazy. Doesn't don't.
 {}:"|<>?~-=_+
+
+doesn't don't

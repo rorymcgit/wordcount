@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
+  <script src="./dropzone.js"></script>
   <title>Word Counter</title>
   <link rel="stylesheet" href="/style.css"/>
 
 </head>
 <body>
   <h1>Word Counter</h1>
+  <div>
+    <%- include('fileSelect.ejs') %>
+  </div>
 </body>
 </html>
