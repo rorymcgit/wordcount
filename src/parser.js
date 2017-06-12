@@ -4,7 +4,7 @@ const fs = require("fs");
 
 function parser(filename) {
   var data = fs.readFileSync(filename).toString();
-  var strippedData = data.match(/[^_\W\d]+/g).join(" ");
+  var strippedData = data.match(/[^_\W\d]+/g).join(" ").toLowerCase();
   // console.log("stripped: ", strippedData.split(" "));
   return strippedData.split(" ");
 }
