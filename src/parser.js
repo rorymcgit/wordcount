@@ -1,7 +1,12 @@
+"use strict";
+
 const fs = require("fs");
 
 function parser(filename) {
-  return fs.readFileSync(filename).toString().split(" ");
+  var data = fs.readFileSync(filename).toString();
+  var strippedData = data.match(/[^_\W\d]+/g).join(" ");
+  // console.log("stripped: ", strippedData.split(" "));
+  return strippedData.split(" ");
 }
 
 module.exports = parser;
