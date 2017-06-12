@@ -1,14 +1,17 @@
 "use strict";
 
-const counter = require("./src/counter");
-const parser = require("./src/parser");
-const express = require("express");
-const app = express();
+const counter = require("./src/counter"),
+  parser = require("./src/parser"),
+  express = require("express"),
+  app = express();
 
 var port = 3000;
 
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
+
 app.get("/", (req, res) => {
-  res.send("Hello world");
+  res.render("landingPage");
 });
 
 app.listen(port, function() {
