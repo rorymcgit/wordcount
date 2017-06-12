@@ -1,7 +1,7 @@
 "use strict";
 
 function counter(words) {
-  return words.reduce(function (allWords, word) {
+  return words.reduce(function(allWords, word) {
     if (word in allWords) {
       allWords[word]++;
     }
@@ -9,7 +9,7 @@ function counter(words) {
       allWords[word] = 1;
     }
     return allWords;
-    }, {});
+  }, {});
 }
 
 module.exports = counter;
