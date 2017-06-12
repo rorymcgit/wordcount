@@ -2,7 +2,6 @@
 
 const expect = require("chai").expect;
 const parser = require("../src/parser");
-const fs = require("fs");
 
 describe("Parse text file", () => {
   var testFile = "./spec/test.txt";
@@ -12,7 +11,7 @@ describe("Parse text file", () => {
     expect(parser(testFile)).to.eql(expectedData);
   });
 
-  it("downcases every word", () => {
+  it("downcases words", () => {
     expect(parser(testFile)[0]).to.eql("the");
   })
 });
