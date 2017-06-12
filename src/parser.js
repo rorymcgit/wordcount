@@ -3,22 +3,27 @@
 const fs = require("fs");
 const counter = require("../src/counter");
 
-function parser(filename) {
-  var data = _readFile(filename);
-  var lowercaseData = _lowercaseString(data);
-  return _removePunctuation(lowercaseData);
+
+function Parser(filename) {
+  this.file = filename;
 }
 
-function _readFile(filename) {
-  return fs.readFileSync(filename);
+Parser.prototype.parse = function() {
+  var data = this._readFile();
+  var lowercaseData = this._lowercaseString(data);
+  return this._removePunctuation(lowercaseData);
 }
 
-function _lowercaseString(data) {
+Parser.prototype._readFile = function() {
+  return fs.readFileSync(this.file);
+}
+
+Parser.prototype._lowercaseString = function(data) {
   return data.toString().toLowerCase();
 }
 
-function _removePunctuation(data) {
+Parser.prototype._removePunctuation = function(data) {
   return data.match(/[^_\W\d]+/g);
 }
 
-module.exports = parser;
+module.exports = Parser;
