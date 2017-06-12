@@ -13,6 +13,6 @@ describe("Parse text file", () => {
   });
 
   it("downcases every word", () => {
-    expect(parser(testFile)[0]).to.eql("the")
+    expect(parser(testFile)[0]).to.eql("the");
   })
 });
