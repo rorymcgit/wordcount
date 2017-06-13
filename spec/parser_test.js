@@ -10,7 +10,7 @@ describe("Parse text file", () => {
   beforeEach('instantiate parser', () => {
     var testFile = "./spec/test.txt";
     this.parser = new Parser(testFile);
-    this.expectedData = ["the", "quick", "brown", "meerkat", "jumps", "over", "the", "lazy", "dog", "the", "brown", "meerkat", "is", "quick", "the", "dog", "is", "lazy", "a", "doesnt", "dont", "doesnt", "dont"];
+    this.expectedData = ["the", "quick", "brown", "meerkat", "jumps", "over", "the", "lazy", "dog", "the", "brown", "meerkat", "is", "quick", "the", "dog", "is", "lazy", "a", "doesnt", "dont", "doesnt", "dont", "red", "brick", "fronted"];
   });
 
   it("makes an array of only words in the text file", () => {
@@ -27,10 +27,10 @@ describe("Parse text file", () => {
     expect(_readFileSpy).calledOnce;
   });
 
-  it("parse calls _lowercaseString", () => {
-    const _lowercaseStringSpy = sinon.spy(this.parser, '_lowercaseString');
+  it("parse calls _createLowerCaseString", () => {
+    const _createLowerCaseStringSpy = sinon.spy(this.parser, '_createLowerCaseString');
     this.parser.parse();
-    expect(_lowercaseStringSpy).calledOnce;
+    expect(_createLowerCaseStringSpy).calledOnce;
   });
 
   it("parse calls _removeNewLines", () => {
