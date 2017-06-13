@@ -12,7 +12,7 @@ Printer.prototype.sortArrayByCount = function(inputArray) {
 Printer.prototype.printToConsole = function(arrayToPrint) {
   arrayToPrint.forEach(function(wordObject) {
     var tabs;
-    if (this._isLongerThanATab(wordObject['word'])){
+    if (Printer.prototype._isLongerThanATab(wordObject['word'])){
       tabs = "\t\t";
     } else {
       tabs = "\t\t\t";
