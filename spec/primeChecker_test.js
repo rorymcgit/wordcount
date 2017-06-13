@@ -1,7 +1,7 @@
 "use strict";
 
 const expect = require("chai").expect;
-const PrimeChecker = require("../src/PrimeChecker");
+const PrimeChecker = require("../src/primeChecker");
 
 describe("Prime checker", () => {
 
