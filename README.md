@@ -22,7 +22,7 @@ I also used Express.js and Dropzone.js (a file drag-n-drop library), however the
   - Otherwise run `brew install node`
 - Run `npm test` to view tests
 
-![](https://github.com/rorymcgit/wordcount/blob/master/tests.png)
+![](https://github.com/rorymcgit/wordcount/blob/master/tests_grab.png)
 
 ## Usage instructions
 - Run `node countWords.js /path/to/your/file.txt`. You can drag and drop your file into terminal after `node countWords` to generate the filepath
