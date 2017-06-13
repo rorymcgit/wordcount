@@ -1,7 +1,8 @@
 "use strict";
 
-const counter = require("./src/counter"),
+const Counter = require("./src/counter"),
   Parser = require("./src/parser"),
+  PrimeChecker = require("./src/primeChecker"),
   express = require("express"),
   fileUpload = require('express-fileupload'),
   app = express();
@@ -39,4 +40,7 @@ app.listen(port, function() {
 });
 
 // var parser = new Parser("Railway-Children-by-E-Nesbit.txt");
-// console.log(counter(parser.parse()));
+// var primeChecker = new PrimeChecker();
+// var counter = new Counter(primeChecker);
+// var allWords = parser.parse();
+// console.log(counter.countWordFrequency(allWords));

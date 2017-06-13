@@ -1,8 +1,10 @@
 "use strict";
 
-const isPrime = require("./isPrime");
+function Counter(primeChecker) {
+  this.primeChecker = primeChecker;
+}
 
-function counter(words) {
+Counter.prototype.countWordFrequency = function(words) {
   var result = words.reduce(function(allWords, word) {
     if (word in allWords) {
       allWords[word]++;
@@ -12,20 +14,21 @@ function counter(words) {
     }
     return allWords;
   }, {});
+  return this._buildObjectsArray(result);
+};
 
-  var keys = Object.keys(result)
-  var values = Object.values(result)
-
-  var finalArray = [];
-
+Counter.prototype._buildObjectsArray = function(wordAndCount) {
+  var [keys, values] = [Object.keys(wordAndCount), Object.values(wordAndCount)]
+  var allObjectsArray = [];
+  
   for (var k = 0; k < keys.length; k++) {
     var wordObject = {};
     wordObject['word'] = keys[k];
     wordObject['count'] = values[k];
-    wordObject['countIsPrime'] = isPrime(values[k]);
-    finalArray.push(wordObject);
+    wordObject['countIsPrime'] = this.primeChecker.isPrime(values[k]);
+    allObjectsArray.push(wordObject);
   }
-  return finalArray;
+  return allObjectsArray;
 }
 
-module.exports = counter;
+module.exports = Counter;
