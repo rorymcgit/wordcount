@@ -24,7 +24,7 @@ app.post('/file-upload', function(req, res) {
   }
   sampleFile = req.files;
   console.log(sampleFile);
-  sampleFile.file.mv(__dirname + '/files/'+sampleFile.file.name, function(err) {
+  sampleFile.file.mv(__dirname + '/files/' + sampleFile.file.name, function(err) {
     if (err) {
       console.log(err);
       res.status(500).send(err);

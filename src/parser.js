@@ -25,7 +25,7 @@ Parser.prototype._lowercaseString = function(data) {
 }
 
 Parser.prototype._createAllValuesArray = function(data) {
-  return data.replace(/\s+/g, " ").split(" ");
+  return data.replace(/\n+/g, " ").split(" ");
 };
 
 Parser.prototype._removePunctuation = function(allValues) {
