@@ -11,7 +11,7 @@ function Parser(filename) {
 Parser.prototype.parse = function() {
   var data = this._readFile();
   var lowercaseData = this._lowercaseString(data);
-  var allValues = this._createAllValuesArray(lowercaseData);
+  var allValues = this._removeNewLines(lowercaseData);
   var stripped = this._removePunctuation(allValues);
   return this._removeNullValues(stripped);
 }
@@ -24,7 +24,7 @@ Parser.prototype._lowercaseString = function(data) {
   return data.toString().toLowerCase();
 }
 
-Parser.prototype._createAllValuesArray = function(data) {
+Parser.prototype._removeNewLines = function(data) {
   return data.replace(/\n+/g, " ").split(" ");
 };
 
