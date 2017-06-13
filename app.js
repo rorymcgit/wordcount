@@ -24,7 +24,7 @@ app.post("/file-upload", (req, res) => {
     res.send("No files were uploaded.");
     return;
   }
-  
+
   sampleFile = req.files;
   // console.log(sampleFile.file.data.toString());
   console.log(sampleFile);
@@ -33,26 +33,12 @@ app.post("/file-upload", (req, res) => {
       console.log(err);
       res.status(500).send(err);
     } else {
-      // res.send('File uploaded!');
       // , { file: sampleFile.file.data.toString() }
       console.log("app.js: File uploaded ");
-      // res.send("UPLOADED");
-      res.redirect("/here")
     }
   });
 });
 
-app.get("/here", (req, res) => {
-  res.send('GOT TO GET /here')
-});
-
-
 app.listen(port, () => {
   console.log("App is live on port " + port);
 });
-
-// var parser = new Parser("Railway-Children-by-E-Nesbit.txt");
-// var primeChecker = new PrimeChecker();
-// var counter = new Counter(primeChecker);
-// var allWords = parser.parse();
-// console.log(counter.countWordFrequency(allWords));

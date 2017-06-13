@@ -21,7 +21,7 @@ Printer.prototype.printToConsole = function(arrayToPrint) {
                 tabs,
                 "Count: ", wordObject['count'],
                 "\t\t",
-                "Count is Prime? ", wordObject['countIsPrime']);
+                "Count is prime? ", wordObject['countIsPrime']);
   });
 }
 

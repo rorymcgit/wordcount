@@ -5,7 +5,7 @@ const sinon = require("sinon");
 require("chai").use(require("sinon-chai"));
 const Printer = require("../src/Printer");
 
-describe("Prints to console", () => {
+describe("Print to console", () => {
 
   beforeEach("instantiate printer", () => {
     this.printer = new Printer();
@@ -28,12 +28,5 @@ describe("Prints to console", () => {
   it("returns false for a string shorter than or equal to 7 characters", () => {
     expect(this.printer._isLongerThanATab("Meerkat")).to.be.false;
   });
-
-  // it("printToConsole calls isLongerThanATab", () => {
-  //   const _isLongerThanATabSpy = sinon.spy(this.printer, "_isLongerThanATab");
-  //   this.printer.printToConsole(this.testWordObjectsArray);
-  //   expect(_isLongerThanATabSpy).calledOnce;
-  // });
-
 
 });
