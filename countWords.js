@@ -14,7 +14,6 @@ const allWords = parser.parse();
 const allWordCountObjects = counter.countWordFrequency(allWords);
 
 const printer = new Printer();
-
 const sortedWordCountObjects = printer.sortArrayByCount(allWordCountObjects);
 
 printer.printToConsole(sortedWordCountObjects);

@@ -3,13 +3,13 @@
 ## Description
 This application receives a text file as input (as an argument provided via the command line) and prints out a list of all words in that text file with the number of occurrences of each word alongside it, as well as whether that number is a prime number or not.
 
-The application is built with the following technologies:
+The application was written in Javascript with the following technologies:
 - Node.js
 - Mocha (a testing framework)
 - Chai (an assertion library)
 - Sinon (a spy/stub/mock library)
 
-I also used Express.js and Dropzone.js (a file drag-n-drop library), however the front end is a work in progress.
+I also used Express.js and Dropzone.js (a file drag-n-drop library) throughout the development, however the front end is a work in progress.
 
 
 ## Installation instructions
