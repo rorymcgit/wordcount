@@ -10,7 +10,10 @@ describe("Count words", () => {
 
   it("counts recurring words", () => {
     var testWords = ["the", "meerkat", "is", "the", "fastest"];
-    var expectedObject = [ { "word" : "the", "count" : 2, "isPrime" : true }, { "word" : "meerkat", "count" : 1, "isPrime" : false }, { "word" : "is", "count" : 1, "isPrime" : false }, { "word" : "fastest", "count" : 1, "isPrime" : false } ];
+    var expectedObject = [ { "word" : "the",     "count" : 2, "countIsPrime" : true },
+                           { "word" : "meerkat", "count" : 1, "countIsPrime" : false },
+                           { "word" : "is",      "count" : 1, "countIsPrime" : false },
+                           { "word" : "fastest", "count" : 1, "countIsPrime" : false } ];
     expect(counter(testWords)).to.eql(expectedObject);
   })
 });

@@ -3,28 +3,28 @@
 const isPrime = require("./isPrime");
 
 function counter(words) {
-  var compressed = [];
+  var results = [];
 	var copy = words.slice(0);
 
 	for (var i = 0; i < words.length; i++) {
-		var myCount = 0;
+		var wordCount = 0;
 		for (var w = 0; w < copy.length; w++) {
 			if (words[i] == copy[w]) {
-				myCount++;
+				wordCount++;
 				delete copy[w];
 			}
 		}
 
-		if (myCount > 0) {
-			var a = new Object();
-			a.word = words[i];
-			a.count = myCount;
-      a.isPrime = isPrime(myCount);
-			compressed.push(a);
+		if (wordCount > 0) {
+			var wordObject = new Object();
+			wordObject.word = words[i];
+			wordObject.count = wordCount;
+      wordObject.countIsPrime = isPrime(wordCount);
+			results.push(wordObject);
 		}
 	}
-  // console.log(compressed);
-	return compressed;
+  console.log(results);
+	return results;
 }
 
 module.exports = counter;
