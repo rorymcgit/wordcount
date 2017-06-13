@@ -4,7 +4,7 @@ const expect = require("chai").expect;
 const counter = require("../src/counter");
 
 describe("Count words", () => {
-  it("returns an object", () => {
+  it("returns an empty array by default", () => {
     expect(counter([])).to.eql([]);
   });
 

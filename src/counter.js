@@ -3,28 +3,29 @@
 const isPrime = require("./isPrime");
 
 function counter(words) {
-  var results = [];
-	var copy = words.slice(0);
+  var result = words.reduce(function(allWords, word) {
+    if (word in allWords) {
+      allWords[word]++;
+    }
+    else {
+      allWords[word] = 1;
+    }
+    return allWords;
+  }, {});
 
-	for (var i = 0; i < words.length; i++) {
-		var wordCount = 0;
-		for (var w = 0; w < copy.length; w++) {
-			if (words[i] == copy[w]) {
-				wordCount++;
-				delete copy[w];
-			}
-		}
+  var keys = Object.keys(result)
+  var values = Object.values(result)
 
-		if (wordCount > 0) {
-			var wordObject = new Object();
-			wordObject.word = words[i];
-			wordObject.count = wordCount;
-      wordObject.countIsPrime = isPrime(wordCount);
-			results.push(wordObject);
-		}
-	}
-  console.log(results);
-	return results;
+  var finalArray = [];
+
+  for (var k = 0; k < keys.length; k++) {
+    var wordObject = {};
+    wordObject['word'] = keys[k];
+    wordObject['count'] = values[k];
+    wordObject['countIsPrime'] = isPrime(values[k]);
+    finalArray.push(wordObject);
+  }
+  return finalArray;
 }
 
 module.exports = counter;
