@@ -28,7 +28,7 @@ I also used Express.js and Dropzone.js (a file drag-n-drop library) throughout t
 - Run `node countWords.js /path/to/your/file.txt`. You can drag and drop your file into terminal after `node countWords` to generate the filepath
 - A tabbed table will print to the console like below:
 
-![](https://github.com/rorymcgit/wordcount/blob/master/consoleoutput.png)
+![](https://github.com/rorymcgit/wordcount/blob/master/console_output.png)
 
 
 ### Successes
